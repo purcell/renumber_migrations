@@ -1,0 +1,6 @@
+author: Steve Purcell
+summary: "A db:migrate:renumber task for svn users"
+homepage: http://www.sanityinc.com/articles/renumber-rails-migrations
+plugin: http://rails.sanityinc.com/plugins/renumber_migrations/
+license: MIT
+rails_version: 1.2+

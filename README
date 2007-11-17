@@ -4,6 +4,9 @@ RenumberMigrations
 Automatically renumber new local migrations when their numbers clash with
 team-mates' migrations updated from a subversion repository.
 
+The plugin provides a rake task that has been used without problems for over
+a year on a huge project with 8+ developers and over 600 migrations.
+
 The plugin's home on the web is here:
 
    http://www.sanityinc.com/                                      - articles and news
