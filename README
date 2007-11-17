@@ -1,0 +1,39 @@
+RenumberMigrations
+==================
+
+Automatically renumber new local migrations when their numbers clash with
+team-mates' migrations updated from a subversion repository.
+
+The plugin's home on the web is here:
+
+   http://www.sanityinc.com/                                      - articles and news
+   http://git.sanityinc.com/?p=renumber_migrations.git;a=summary  - code and downloads
+
+Send feedback or patches by email to steve@sanityinc.com
+
+
+Examples
+========
+
+You're working on migration 045_add_my_new_feature.rb, when one of your team-mates checks
+045_some_other_migration.rb into svn.  You notice the numbering clash (or 'rake db:migrate'
+notices it for you), and you simply run the db:migrate:renumber task:
+
+% rake db:migrate:renumber
+
+Voilá - your migration is renumbered to 046, and the database schema is left at version
+044 ready for you to re-test your migration.
+
+
+Requirements
+============
+
+Note that renumbering a migration *requires* that you have a working #down method for
+your migration.
+
+Renumbering also requires that you have network access to the subversion server, since
+clashing migrations are temporarily removed locally, and later re-requested.
+
+
+
+Copyright (c) 2007 Steve Purcell, released under the MIT license
