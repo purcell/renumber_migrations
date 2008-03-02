@@ -15,7 +15,7 @@ namespace :db do
 
     desc 'Renumber uncommitted migrations after discovering a numbering conflict'
     task :renumber => :environment do
-      raise "This task currently supports only subversion projects"
+      raise "This task currently supports only subversion projects" unless File.exist?(File.join(RAILS_ROOT, ".svn"))
       new_migrations, existing_migrations = migrations.partition { |number, file| %w(A ?).include? svn_status_code("#{MIGRATION_DIR}/#{file}") }
       max_existing = existing_migrations.map { |number, file| number }.max
       min_new = new_migrations.map { |number, file| number }.min
